@@ -1,0 +1,59 @@
+<div class="flex">
+  <div class="px-2">
+    <button class="bg-green-500 hover:bg-green-400 text-white font-semibold  py-2 px-4 border border-green-500 rounded"
+      (click)="alertService.success({main: 'Success', description: 'You have successfully displayed an alert!'}, options)">
+      Success
+    </button>
+  </div>
+
+  <div class="px-2">
+    <button class="bg-red-500 hover:bg-red-400 text-white font-semibold  py-2 px-4 border border-red-500 rounded px-2"
+      (click)="alertService.error({main: 'Error', description: 'Oops, something wrong happened...'}, options)">
+      Error
+    </button>
+  </div>
+
+  <div class="px-2">
+    <button
+      class="bg-yellow-500 hover:bg-yellow-400 text-white font-semibold  py-2 px-4 border border-yellow-500 rounded"
+      (click)="alertService.warn({main: 'Warning', description: 'This is a warning message'}, options)">
+      Warning
+    </button>
+  </div>
+
+  <div class="px-2">
+    <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold  py-2 px-4 border border-blue-500 rounded"
+      (click)="alertService.info({main: 'Info', description: 'This is an info message'}, options)">
+      Info
+    </button>
+  </div>
+
+  <div class="px-2">
+    <button
+      class="bg-transparent hover:bg-gray-400 text-gray font-semibold hover:text-white py-2 px-4 border border-gray-400 hover:border-transparent rounded"
+      (click)="alertService.clear()">
+      Clear
+    </button>
+  </div>
+</div>
+
+<label class="flex justify-start items-start my-4">
+  <div
+    class="bg-white border-2 rounded border-gray-400 w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500">
+    <input type="checkbox" class="opacity-0 absolute" name="autoClose" id="autoClose" [(ngModel)]="options.autoClose">
+    <svg class="fill-current hidden w-4 h-4 text-green-500 pointer-events-none" viewBox="0 0 20 20">
+      <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" /></svg>
+  </div>
+  <div class="select-none">Auto close alert after three seconds</div>
+</label>
+
+<label class="flex justify-start items-start my-4">
+  <div
+    class="bg-white border-2 rounded border-gray-400 w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500">
+    <input type="checkbox" class="opacity-0 absolute" name="keepAfterRouteChange" id="keepAfterRouteChange"
+      [(ngModel)]="options.keepAfterRouteChange">
+    <svg class="fill-current hidden w-4 h-4 text-green-500 pointer-events-none" viewBox="0 0 20 20">
+      <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" /></svg>
+  </div>
+  <div class="select-none">Keep displaying after one route change</div>
+</label>
